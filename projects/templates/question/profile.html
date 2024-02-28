@@ -1,15 +1,43 @@
 {% extends 'base.html' %} {% load static %} {% block content %}
-<div class="container my-3 profile_div">
-  <img src="{% static 'image/profile.png' %}" class="profile" />
-  <div class="profile_div">
-    <div class="nameis">My name is</div>
-    <div class="span_uheeking">Uheeking</div>
+<div style="display: flex flex-direction:column">
+  <div>
+    <div class="container my-3 profile_div">
+      <img src="{% static 'image/profile.png' %}" class="profile" />
+      <div class="profile_div">
+        <div class="nameis">My name is</div>
+        <div class="span_uheeking">Uheeking</div>
+      </div>
+    </div>
+    <div class="icons">
+      <button class="question">
+        질문하기
+        <i class="fa-solid fa-arrow-pointer"></i>
+      </button>
+    </div>
   </div>
-</div>
-<div class="icons">
-  <button class="question">
-    질문하기
-    <i class="fa-solid fa-arrow-pointer"></i>
-  </button>
+  <div style="padding-top: 30px">
+    <div
+      class="max-w-2xl mx-auto rounded-lg bg-dark p-4 text-white"
+      style="border-radius: 4%; margin: 0 auto; width: 300px"
+    >
+      <div class="flex items-center justify-between pb-2">
+        <div class="flex_balance">
+          <div class="color_flex">
+            <div class="circle bg-red"></div>
+            <div class="circle bg-yellow"></div>
+            <div class="circle bg-green"></div>
+            <div class="circle bg-blue"></div>
+            <i class="fa-regular fa-heart heart"></i>
+          </div>
+          <div class="text-xs text-gray-400">bash</div>
+        </div>
+      </div>
+      <div class="text-green-400">
+        <p class="text-green">$ 유형황</p>
+        <p class="font-mono">히엘키프!</p>
+        <p class="text-green">$ 삭제하시겠습니까? Yes or No</p>
+      </div>
+    </div>
+  </div>
 </div>
 {% endblock %}

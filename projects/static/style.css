@@ -39,3 +39,49 @@
     font-size: larger;
     font-weight: 800;
 }
+
+/* Replace these colors with the hex codes you prefer */
+.bg-dark {
+    background-color: #121212;
+}
+
+.flex_balance {
+    display: flex;
+    justify-content: space-between;
+}
+
+.color_flex {
+    display: flex;
+}
+
+.circle {
+    margin-top: 5px;
+    width: 10px;
+    margin-right: 3px;
+    height: 10px;
+    border-radius: 50%;
+}
+
+.heart {
+    margin-top: 2px;
+}
+
+.text-green {
+    color: #4AD97C
+}
+
+.bg-red {
+    background-color: #FF605C;
+}
+
+.bg-yellow {
+    background-color: #FFBD44;
+}
+
+.bg-green {
+    background-color: #00CA4E;
+}
+
+.bg-blue {
+    background-color: #FF2424;
+}
