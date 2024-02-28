@@ -1,6 +1,15 @@
-{% extends 'base.html' %} {% block content %}
-<div class="container my-3">
-  유희왕 화이팅
-  <div 페이징처리 끝 --></div>
-  {% endblock %}
+{% extends 'base.html' %} {% load static %} {% block content %}
+<div class="container my-3 profile_div">
+  <img src="{% static 'image/profile.png' %}" class="profile" />
+  <div class="profile_div">
+    <div class="nameis">My name is</div>
+    <div class="span_uheeking">Uheeking</div>
+  </div>
 </div>
+<div class="icons">
+  <button class="question">
+    질문하기
+    <i class="fa-solid fa-arrow-pointer"></i>
+  </button>
+</div>
+{% endblock %}

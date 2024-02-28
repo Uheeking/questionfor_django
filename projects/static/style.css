@@ -3,3 +3,39 @@
     font-style: oblique;
     font-family: fantasy;
 }
+
+.profile_div {
+    margin: 0 auto;
+    width: 120px;
+}
+
+.profile {
+    width: 120px;
+    border-radius: 50%;
+}
+
+.nameis {
+    text-align: center;
+}
+
+.span_uheeking {
+    background-color: black;
+    color: white;
+    text-align: center;
+    font-size: larger;
+    font-family: fantasy;
+}
+
+.icons {
+    width: 122px;
+    display: flex;
+    margin: -13px auto;
+    padding-left: 13px;
+}
+
+.question {
+    background: none;
+    border: none;
+    font-size: larger;
+    font-weight: 800;
+}
