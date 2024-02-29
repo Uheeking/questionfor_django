@@ -5,7 +5,6 @@ from django.db.models import Q
 from ..models import Question
 
 def index(request):
-    Uheeking = 'Uheeking'
-    # page = request.GET.get('page', '1')  # 페이지
-    context = { 'Uheeking':Uheeking}
+    question_list = Question.objects.order_by('-create_date')
+    context = {'question_list':question_list}
     return render(request, 'question/profile.html', context)

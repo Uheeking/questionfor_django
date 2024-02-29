@@ -60,6 +60,7 @@
       </button>
     </div>
   </div>
+  {% if question_list %} {% for question in question_list %}
   <div style="padding-top: 30px">
     <div
       class="max-w-2xl mx-auto rounded-lg bg-dark p-4 text-white"
@@ -79,33 +80,34 @@
       </div>
       <div class="text-green-400">
         <p class="text-green">$ 유형황</p>
-        <p class="font-mono">히엘키프!</p>
+        <p class="font-mono">{{ question.subject }}</p>
+        <p class="font-mono">{{ question.content }}</p>
         <p class="text-green">$ 삭제하시겠습니까? Yes or No</p>
       </div>
     </div>
   </div>
-</div>
-{% endblock %} {% block script %}
-<script type="text/javascript">
-  var modal = document.getElementById("myModal");
-  var btn = document.getElementById("modalButton");
-  var span = document.getElementsByClassName("close")[0];
+  {% endfor %} {% endif %} {% endblock %} {% block script %}
+  <script type="text/javascript">
+    var modal = document.getElementById("myModal");
+    var btn = document.getElementById("modalButton");
+    var span = document.getElementsByClassName("close")[0];
 
-  btn.onclick = function () {
-    modal.style.display = "block";
-    modal.style.background = "rgba(0, 0, 0, 0.8)";
-    modal.styletransform = "translate(-50%, -50%)";
-  };
+    btn.onclick = function () {
+      modal.style.display = "block";
+      modal.style.background = "rgba(0, 0, 0, 0.8)";
+      modal.styletransform = "translate(-50%, -50%)";
+    };
 
-  span.onclick = function () {
-    modal.style.display = "none";
-  };
-
-  window.onclick = function (event) {
-    if (event.target == modal) {
+    span.onclick = function () {
       modal.style.display = "none";
-    }
-  };
-</script>
+    };
 
-{% endblock %}
+    window.onclick = function (event) {
+      if (event.target == modal) {
+        modal.style.display = "none";
+      }
+    };
+  </script>
+
+  {% endblock %}
+</div>
