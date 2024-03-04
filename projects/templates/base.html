@@ -20,6 +20,7 @@
     />
     <!-- pybo CSS -->
     <link rel="stylesheet" type="text/css" href="{% static 'style.css' %}" />
+
     <title>무엇이든지 물어보세요!</title>
   </head>
   <body>
@@ -30,20 +31,9 @@
     <!-- 기본 템플릿 안에 삽입될 내용 End -->
     <!-- Bootstrap JS -->
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script type="text/javascript" src="/static/js/profile.js"></script>
+    <script type="text/javascript" src="/static/js/message.js"></script>
     <!-- 자바스크립트 Start -->
-    <script type="text/javascript">
-      $(document).ready(function () {
-        function removeAlerts() {
-          $(".alert-auto-dismissible")
-            .fadeTo(500, 0)
-            .slideUp(500, function () {
-              $(this).remove(); // Remove the alert after animation completes
-            });
-        }
-
-        window.setTimeout(removeAlerts, 1000);
-      });
-    </script>
     <!-- 자바스크립트 End -->
   </body>
 </html>
