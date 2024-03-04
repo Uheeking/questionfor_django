@@ -79,8 +79,10 @@
         </div>
       </div>
       <div class="text-green-400">
-        <p class="text-green">$ 유형황</p>
-        <p class="font-mono">{{ question.subject }}</p>
+        <p class="text-green">$ {{ question.author }}</p>
+        <p class="font-mono">
+          {{ question.subject }}/{{ question.create_date }}
+        </p>
         <p class="font-mono">{{ question.content }}</p>
         <p class="text-green">$ 삭제하시겠습니까? Yes or No</p>
       </div>
