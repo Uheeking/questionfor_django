@@ -31,3 +31,13 @@ def deleteQuestion(request, question_id):
     messages.success(request, '삭제되었습니다.')
     # question.delete()
     return redirect('question:index')
+
+@login_required(login_url='common:login')
+def voteQuestion(request, question_id):
+    question = get_object_or_404(Question, pk=question_id)
+    if request.user == question.author:
+        messages.error(request, '본인이 작성한 글은 추천할수 없습니다')
+    else:
+        question.voter.add(request.user)
+    messages.success(request, '추천되었습니다.')
+    return redirect('question:index')

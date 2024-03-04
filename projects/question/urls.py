@@ -7,8 +7,10 @@ app_name = 'question'
 urlpatterns = [
     path('', base_views.index, name='index'),
     
-    path('question/create/',
+    path('create/',
          question_views.createQuestion, name='question_create'),
-    path('question/delete/<int:question_id>/',
+    path('delete/<int:question_id>/',
          question_views.deleteQuestion, name='question_delete'),
+    path('vote/<int:question_id>/',
+         question_views.voteQuestion, name='question_vote'),
 ]

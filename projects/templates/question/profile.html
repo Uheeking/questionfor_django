@@ -73,7 +73,18 @@
             <div class="circle bg-yellow"></div>
             <div class="circle bg-green"></div>
             <div class="circle bg-blue"></div>
-            <i class="fa-regular fa-heart heart"></i>
+            {% if question.voter.exists %} {% for user in question.voter.all %}
+            {% if request.user == user %}
+            <i class="fa-solid fa-heart"></i>
+            {% else %}
+            <a
+              href="{% url 'question:question_vote' question.id %}"
+              onclick="return confirm('해당글을 추천하시겠습니까?')"
+              class="recommend btn btn-sm btn-outline-secondary heart"
+            >
+              <i class="fa-regular fa-heart"></i>
+            </a>
+            {% endif %} {% endfor %} {% endif %}
           </div>
           <div class="text-xs text-gray-400">bash</div>
         </div>

@@ -63,7 +63,10 @@
 }
 
 .heart {
-    margin-top: 2px;
+    /* margin-top: 2px; */
+    border: none;
+    padding: 0;
+    color: white;
 }
 
 .text-green {
@@ -137,12 +140,13 @@
 }
 
 .message.error {
-    background-color: red;
+    background-color: #FF2405;
     border-color: #ebccd1;
 }
 
 .message.success {
-    background-color: green;
+    background-color: #4AD96D;
+    opacity: 0.8;
     border-color: #ebccd1;
 }
 
