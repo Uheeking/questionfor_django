@@ -24,16 +24,26 @@
   </head>
   <body>
     <!-- 네비게이션바 -->
-    {% include "navbar.html" %}
+    {% include "navbar.html" %} {% include "messages.html" %}
     <!-- 기본 템플릿 안에 삽입될 내용 Start -->
     {% block content %} {% endblock %}
     <!-- 기본 템플릿 안에 삽입될 내용 End -->
     <!-- Bootstrap JS -->
-    {% comment %}
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-    {% endcomment %}
     <!-- 자바스크립트 Start -->
-    {% block script %} {% endblock %}
+    <script type="text/javascript">
+      $(document).ready(function () {
+        function removeAlerts() {
+          $(".alert-auto-dismissible")
+            .fadeTo(500, 0)
+            .slideUp(500, function () {
+              $(this).remove(); // Remove the alert after animation completes
+            });
+        }
+
+        window.setTimeout(removeAlerts, 1000);
+      });
+    </script>
     <!-- 자바스크립트 End -->
   </body>
 </html>

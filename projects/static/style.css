@@ -124,3 +124,28 @@
 .cursor-pointer:hover {
     cursor: pointer !important;
 }
+
+/* Add custom styles for messages */
+.message {
+    background-color: #f0f0f0;
+    border: 1px solid #ccc;
+    padding: 10px;
+    margin-bottom: 10px;
+    width: 70%;
+    margin: 10px auto;
+    color: white;
+}
+
+.message.error {
+    background-color: red;
+    border-color: #ebccd1;
+}
+
+.message.success {
+    background-color: green;
+    border-color: #ebccd1;
+}
+
+.message .close:hover {
+    color: #000;
+}

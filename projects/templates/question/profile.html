@@ -9,7 +9,7 @@
         >&times;</span
       >
       <h5 class="my-3 border-bottom pb-2">질문등록</h5>
-      <form action="{% url 'question:modal' %}" method="post">
+      <form action="{% url 'question:question_create' %}" method="post">
         {% csrf_token %}
         <!-- 오류표시 Start -->
         {% if form.errors %}
@@ -84,7 +84,17 @@
           {{ question.subject }}/{{ question.create_date }}
         </p>
         <p class="font-mono">{{ question.content }}</p>
-        <p class="text-green">$ 삭제하시겠습니까? Yes or No</p>
+        {% if request.user == question.author %}
+        <p class="text-green">
+          $ 삭제하시겠습니까?
+          <a
+            href="{% url 'question:question_delete' question.id  %}"
+            onclick="return confirm('정말로 삭제하시겠습니까?')"
+            class="text-green delete btn btn-sm btn-outline-secondary"
+            >Yes</a
+          >
+        </p>
+        {% endif %}
       </div>
     </div>
   </div>
